@@ -104,17 +104,7 @@ public class ZulrahPlugin extends Plugin {
         }
 
         LocalPoint localPoint = client.getLocalPlayer().getLocalLocation();
-        log.info("[Player] LocalPoint X: {}, Y: {}", localPoint.getX(), localPoint.getY());
-
-        //		optZulrahNpc.ifPresent(npc -> {
-        //			final Optional<Zulrah> optionalZulrah = ZulrahUtility.getZulrah(npc);
-        //
-        //			final WorldPoint worldLocation = npc.getWorldLocation();
-        //			log.debug("Zulrah NG -- [{}] {} @ WorldPoint X: {}, Y: {}, Z: {}, Plane: {}", npc.getId(), npc.getName(), worldLocation.getX(), worldLocation.getY(), worldLocation.getPlane());
-        //
-        //			final LocalPoint localPoint = npc.getLocalLocation();
-        //			log.debug("Zulrah NG -- [{}] {} @ LocalPoint X: {}, Y: {}, Z: {}, Plane: {}", npc.getId(), npc.getName(), localPoint.getX(), localPoint.getY(), worldLocation.getPlane());
-        //		});
+//        log.info("[Player] LocalPoint X: {}, Y: {}", localPoint.getX(), localPoint.getY());
 
         final NPC zulrahNpc = this.instance.getNpc();
 

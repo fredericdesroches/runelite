@@ -23,7 +23,7 @@ public final class ZulrahPhaseUtils
 			return Optional.empty();
 		}
 
-		log.info("[Zulrah Phase] Type {}, Location {}", type, location);
+		log.info("[Zulrah Phase] Type {}, Location {}", type.get(), location.get());
 
 		return Optional.of(new Zulrah(type.get(), location.get()));
 	}

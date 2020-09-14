@@ -42,7 +42,7 @@ public class ZulrahPatternC extends ZulrahPattern {
         add(ZulrahType.RANGE, ZulrahLocation.WEST, PlayerStandLocation.PILLAR_WEST_INSIDE,
             Prayer.PROTECT_FROM_MISSILES);
         add(ZulrahType.MAGIC, ZulrahLocation.NORTH, PlayerStandLocation.PILLAR_EAST_INSIDE, Prayer.PROTECT_FROM_MAGIC);
-        addJad(ZulrahType.MAGIC, ZulrahLocation.EAST, PlayerStandLocation.PILLAR_EAST_INSIDE, Prayer.PROTECT_FROM_MAGIC);
+        addJad(ZulrahType.RANGE, ZulrahLocation.EAST, PlayerStandLocation.PILLAR_EAST_INSIDE, Prayer.PROTECT_FROM_MAGIC);
         add(ZulrahType.MAGIC, ZulrahLocation.NORTH, PlayerStandLocation.TOP_EAST, null);
     }
 
