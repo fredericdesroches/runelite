@@ -43,6 +43,7 @@ public class ZulrahTilesOverlay extends Overlay {
             return null;
         }
 
+        // TODO: Show current if diffrent than next, otherwise show next
         this.drawPlayerLocation(graphics, instance);
         this.drawBossLocation(graphics, instance);
 
@@ -63,7 +64,7 @@ public class ZulrahTilesOverlay extends Overlay {
             this.drawTile(graphics, nextPhase.getPlayerStandLocation().getLocation(), nextString,
                 ZulrahPhaseUtils.getZulrahColor(nextPhase.getZulrah()));
         } else {
-            this.drawTile(graphics, currentPhase.getPlayerStandLocation().getLocation(), "Current / Next",
+            this.drawTile(graphics, nextPhase.getPlayerStandLocation().getLocation(), "Next",
                 ZulrahPhaseUtils.getZulrahColor(currentPhase.getZulrah()));
         }
     }
@@ -75,16 +76,8 @@ public class ZulrahTilesOverlay extends Overlay {
         final ZulrahPhase currentPhase = pattern.getPhase(currentPhaseCounter);
         final ZulrahPhase nextPhase = pattern.getNextPhase(currentPhaseCounter);
 
-        if (currentPhase.getZulrah().getZulrahLocation() != nextPhase.getZulrah().getZulrahLocation()) {
-            final String nextString = nextPhase.isJad() ? "Next JAD" : "Next";
-            this.drawTile(graphics, currentPhase.getZulrah().getZulrahLocation().getLocalPoint(), "Current",
-                ZulrahPhaseUtils.getZulrahColor(currentPhase.getZulrah()));
-            this.drawTile(graphics, nextPhase.getZulrah().getZulrahLocation().getLocalPoint(), nextString,
-                ZulrahPhaseUtils.getZulrahColor(nextPhase.getZulrah()));
-        } else {
-            this.drawTile(graphics, currentPhase.getZulrah().getZulrahLocation().getLocalPoint(), "Current / Next",
-                ZulrahPhaseUtils.getZulrahColor(currentPhase.getZulrah()));
-        }
+        this.drawTile(graphics, currentPhase.getZulrah().getZulrahLocation().getLocalPoint(), "Next",
+            ZulrahPhaseUtils.getZulrahColor(nextPhase.getZulrah()));
     }
 
     private void drawTile(final Graphics2D graphics, final LocalPoint location, final String text, final Color color) {
