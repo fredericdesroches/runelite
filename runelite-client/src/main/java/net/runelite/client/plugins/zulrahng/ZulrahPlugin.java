@@ -59,8 +59,8 @@ public class ZulrahPlugin extends Plugin {
     @Override
     protected void startUp() throws Exception {
         this.overlayManager.add(this.zulrahTilesOverlay);
-//        this.overlayManager.add(this.zulrahCurrentPhaseOverlay);
-//        this.overlayManager.add(this.zulrahNextPhaseOverlay);
+        this.overlayManager.add(this.zulrahCurrentPhaseOverlay);
+        this.overlayManager.add(this.zulrahNextPhaseOverlay);
 //        this.overlayManager.add(this.testTilesOverlay);
 
         this.instance = null;
@@ -69,8 +69,8 @@ public class ZulrahPlugin extends Plugin {
     @Override
     protected void shutDown() throws Exception {
         this.overlayManager.remove(this.zulrahTilesOverlay);
-//        this.overlayManager.remove(this.zulrahCurrentPhaseOverlay);
-//        this.overlayManager.remove(this.zulrahNextPhaseOverlay);
+        this.overlayManager.remove(this.zulrahCurrentPhaseOverlay);
+        this.overlayManager.remove(this.zulrahNextPhaseOverlay);
 //        this.overlayManager.remove(this.testTilesOverlay);
 
         this.instance = null;
