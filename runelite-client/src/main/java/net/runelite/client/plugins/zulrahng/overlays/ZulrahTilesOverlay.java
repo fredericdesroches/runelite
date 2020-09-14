@@ -57,16 +57,15 @@ public class ZulrahTilesOverlay extends Overlay {
         final ZulrahPhase currentPhase = pattern.getPhase(currentPhaseCounter);
         final ZulrahPhase nextPhase = pattern.getNextPhase(currentPhaseCounter);
 
+        final String nextString = nextPhase.isJad() ? "Next JAD" : "Next";
+
         if (currentPhase.getPlayerStandLocation() != nextPhase.getPlayerStandLocation()) {
-            final String nextString = nextPhase.isJad() ? "Next JAD" : "Next";
             this.drawTile(graphics, currentPhase.getPlayerStandLocation().getLocation(), "Current",
                 ZulrahPhaseUtils.getZulrahColor(currentPhase.getZulrah()));
-            this.drawTile(graphics, nextPhase.getPlayerStandLocation().getLocation(), nextString,
-                ZulrahPhaseUtils.getZulrahColor(nextPhase.getZulrah()));
-        } else {
-            this.drawTile(graphics, nextPhase.getPlayerStandLocation().getLocation(), "Next",
-                ZulrahPhaseUtils.getZulrahColor(currentPhase.getZulrah()));
         }
+
+        this.drawTile(graphics, nextPhase.getPlayerStandLocation().getLocation(), nextString,
+            ZulrahPhaseUtils.getZulrahColor(nextPhase.getZulrah()));
     }
 
     private void drawBossLocation(final Graphics2D graphics, final ZulrahInstance instance) {
@@ -76,7 +75,14 @@ public class ZulrahTilesOverlay extends Overlay {
         final ZulrahPhase currentPhase = pattern.getPhase(currentPhaseCounter);
         final ZulrahPhase nextPhase = pattern.getNextPhase(currentPhaseCounter);
 
-        this.drawTile(graphics, currentPhase.getZulrah().getZulrahLocation().getLocalPoint(), "Next",
+        final String nextString = nextPhase.isJad() ? "Next JAD" : "Next";
+
+        if (currentPhase.getZulrah().getZulrahLocation().getLocalPoint() != nextPhase.getZulrah().getZulrahLocation().getLocalPoint()) {
+            this.drawTile(graphics, currentPhase.getZulrah().getZulrahLocation().getLocalPoint(), "Current",
+                ZulrahPhaseUtils.getZulrahColor(currentPhase.getZulrah()));
+        }
+
+        this.drawTile(graphics, nextPhase.getZulrah().getZulrahLocation().getLocalPoint(), nextString,
             ZulrahPhaseUtils.getZulrahColor(nextPhase.getZulrah()));
     }
 

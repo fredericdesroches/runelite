@@ -18,13 +18,15 @@ public class ZulrahOverlayUtility {
     public BufferedImage getPrayerImage(final ZulrahPhase phase) {
         final Prayer prayer = phase.getPrayer();
 
-        switch (prayer) {
-        case PROTECT_FROM_MISSILES:
-            return spriteManager.getSprite(SpriteID.PRAYER_PROTECT_FROM_MISSILES, 0);
-        case PROTECT_FROM_MAGIC:
-            return spriteManager.getSprite(SpriteID.PRAYER_PROTECT_FROM_MAGIC, 0);
-        default:
-            return null;
-        }
+        return null;
+
+//        switch (prayer) {
+//        case PROTECT_FROM_MISSILES:
+//            return spriteManager.getSprite(SpriteID.PRAYER_PROTECT_FROM_MISSILES, 0);
+//        case PROTECT_FROM_MAGIC:
+//            return spriteManager.getSprite(SpriteID.PRAYER_PROTECT_FROM_MAGIC, 0);
+//        default:
+//            return null;
+//        }
     }
 }
